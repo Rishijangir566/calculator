@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+      <div class="wrapper">
+        <h1> Calculator </h1>
+        <input type="number" id="fNum" placeholder="Number">
+        <br>
+         <select name="" id="select"> 
+            <option value="">Operation </option>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+           
+         </select>
+         <br>
+        <input type="number" id="lNum" placeholder="Number">
+        <div class="btn">
+            <button onclick="submit()"> Submit</button>
+        </div>
+
+         <input type="number" id="result" placeholder="Result">
+      </div>
+
+
+
+      <script>
+          let firstVal = document.querySelector("#fNum")
+          let lastVal = document.querySelector("#lNum")
+          let select = document.querySelector("#select")
+          
+
+          let result = document.querySelector("#result")
+
+
+
+          function submit(){
+
+            let num1 =  Number(firstVal.value)
+             let num2 = Number(lastVal.value)
+
+           if (select.value === "+"){
+                 result.value = num1+num2
+           }
+          else if (select.value === "-"){
+                 result.value = num1-num2
+           }
+           else if (select.value === "*"){
+                 result.value = num1*num2
+           }
+           else if (select.value === "/"){
+                 result.value = num1/num2
+           }
+           else {
+                 result.value = num1%num2
+           }
+          }
+      </script>
+</body>
+</html>
